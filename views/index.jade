@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	h1
+		a(href='/') Laptop Config
+	h1
+		a(href='/prev') Previous Purchases
+	h1 Price $
+	h1#price 1000
+	div
+		form(id='lapForm', action='/buy', method='post')
+			label(for='ss') Screen Size:
+				br
+				input.sub(type="radio", name="ss", value="0", checked)
+				|  11 inch
+				br
+				input(type="radio", name="ss", value="1", checked=ss=="1")
+				|  15 inch +$200
+			br
+			label(for='ms') memory Size:
+				br
+				input(type="radio", name="ms", value="0", checked)
+				|  8GB
+				br
+				input(type="radio", name="ms", value="1", checked=ms=="1")
+				|  16GB +$200
+			br
+			label(for='ds') memory Size:
+				br
+				input.sub(type="radio", name="ds", value="0", checked)
+				|  128GB
+				br
+				input.add(type="radio", name="ds", value="1", checked=ds=="1")
+				|  256GB +$200
+			br
+			br
+			input(type='submit',value='Buy!')
+	div#qunit
+
